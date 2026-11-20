@@ -10,4 +10,5 @@ const worker = await Bun.build({ ...common, entrypoints: ["src/sim/worker.ts"], 
 for (const r of [app, worker]) if (!r.success) { console.error(r.logs); process.exit(1); }
 if (existsSync(`${out}/main.css`)) renameSync(`${out}/main.css`, `${out}/app.css`);
 cpSync("public/index.html", `${out}/index.html`);
+cpSync("public/og-image.png", `${out}/og-image.png`);
 console.log(`built ${out}/`);

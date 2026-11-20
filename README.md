@@ -63,7 +63,7 @@ Requires [Bun](https://bun.sh) 1.1 or later.
 
 ### Deployment
 
-Every push to `main` runs `.github/workflows/deploy.yml`, which installs, tests, builds and publishes `dist/` to **GitHub Pages**. One-time setup: *Settings → Pages → Build and deployment → Source: **GitHub Actions***.
+Every push to `main` runs `.github/workflows/deploy.yml`, which installs, tests, builds and publishes `dist/` to the `gh-pages` branch served by **GitHub Pages** (Settings → Pages → Source: *Deploy from a branch* → `gh-pages`).
 All asset paths are relative, so `dist/` also works on any other static host (Netlify, Vercel, Cloudflare Pages).
 
 Sign-in is a **demo flow**: any email and an 8-character password work, and nothing leaves the browser. Visitors can also use **Try as guest**.

@@ -1,0 +1,22 @@
+{
+  "name": "sabbaq",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SABBAQ (سَبّاق) — interactive airport emergency evacuation simulator. Frontend showcase, Arabic RTL.",
+  "type": "module",
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "start": "bun scripts/build.ts && bun scripts/serve.ts dist 4173",
+    "seed": "bun scripts/seed.ts",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.6.0"
+  }
+}

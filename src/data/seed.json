@@ -1,0 +1,374 @@
+{
+ "runs": [
+  {
+   "id": "r1",
+   "projectId": "p1",
+   "kind": "simulation",
+   "title": "حريق – بوابة 03",
+   "config": {
+    "seed": 7,
+    "passengers": 480,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": {
+     "type": "fire",
+     "zoneId": "G03",
+     "at": 30
+    }
+   },
+   "summary": {
+    "evacTime": 97.8,
+    "completion": 1,
+    "evacuated": 500,
+    "trapped": 0,
+    "total": 500,
+    "peakDensity": 3.33,
+    "maxCongestionPoints": 2,
+    "exitUsage": {
+     "E1": 171,
+     "E2": 166,
+     "E3": 52,
+     "E4": 46,
+     "ME": 65
+    },
+    "alarmAt": 30,
+    "endT": 127.8
+   },
+   "score": 75,
+   "daysAgo": 1
+  },
+  {
+   "id": "r2",
+   "projectId": "p1",
+   "kind": "simulation",
+   "title": "خطر تشغيلي – إغلاق E2",
+   "config": {
+    "seed": 7,
+    "passengers": 700,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": {
+     "type": "operational",
+     "zoneId": "G04",
+     "at": 20
+    }
+   },
+   "summary": {
+    "evacTime": 153.2,
+    "completion": 1,
+    "evacuated": 720,
+    "trapped": 0,
+    "total": 720,
+    "peakDensity": 5,
+    "maxCongestionPoints": 4,
+    "exitUsage": {
+     "E1": 242,
+     "E2": 0,
+     "E3": 77,
+     "E4": 278,
+     "ME": 123
+    },
+    "alarmAt": 20,
+    "endT": 173.2
+   },
+   "score": 56,
+   "daysAgo": 2
+  },
+  {
+   "id": "r3",
+   "projectId": "p1",
+   "kind": "improvement",
+   "title": "إعادة توزيع المسافرين",
+   "config": {
+    "seed": 7,
+    "passengers": 480,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": {
+     "type": "fire",
+     "zoneId": "G03",
+     "at": 30
+    },
+    "modifiers": {
+     "guidance": true
+    }
+   },
+   "summary": {
+    "evacTime": 97.8,
+    "completion": 1,
+    "evacuated": 500,
+    "trapped": 0,
+    "total": 500,
+    "peakDensity": 3.22,
+    "maxCongestionPoints": 2,
+    "exitUsage": {
+     "E1": 169,
+     "E2": 160,
+     "E3": 54,
+     "E4": 52,
+     "ME": 65
+    },
+    "alarmAt": 30,
+    "endT": 127.8
+   },
+   "score": 76,
+   "daysAgo": 1
+  },
+  {
+   "id": "r4",
+   "projectId": "p1",
+   "kind": "improvement",
+   "title": "فتح مسار إخلاء بديل",
+   "config": {
+    "seed": 7,
+    "passengers": 480,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 2,
+    "emergencyExits": 0,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": {
+     "type": "fire",
+     "zoneId": "G03",
+     "at": 30
+    },
+    "modifiers": {
+     "openExits": [
+      "E3",
+      "E4"
+     ]
+    }
+   },
+   "summary": {
+    "evacTime": 97.8,
+    "completion": 1,
+    "evacuated": 500,
+    "trapped": 0,
+    "total": 500,
+    "peakDensity": 3.33,
+    "maxCongestionPoints": 2,
+    "exitUsage": {
+     "E1": 171,
+     "E2": 166,
+     "E3": 52,
+     "E4": 46,
+     "ME": 65
+    },
+    "alarmAt": 30,
+    "endT": 127.8
+   },
+   "score": 75,
+   "daysAgo": 3
+  },
+  {
+   "id": "r5",
+   "projectId": "p1",
+   "kind": "stress",
+   "title": "أسوأ حالة: إغلاق ممر البوابة 02",
+   "config": {
+    "seed": 7,
+    "passengers": 480,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": {
+     "type": "closure",
+     "zoneId": "G02",
+     "at": 20
+    }
+   },
+   "summary": {
+    "evacTime": 97.2,
+    "completion": 0.912,
+    "evacuated": 456,
+    "trapped": 44,
+    "total": 500,
+    "peakDensity": 3.22,
+    "maxCongestionPoints": 2,
+    "exitUsage": {
+     "E1": 127,
+     "E2": 166,
+     "E3": 52,
+     "E4": 46,
+     "ME": 65
+    },
+    "alarmAt": 20,
+    "endT": 117.2
+   },
+   "score": 50,
+   "daysAgo": 4
+  },
+  {
+   "id": "r6",
+   "projectId": "p2",
+   "kind": "simulation",
+   "title": "تسرّب غاز – البهو الرئيسي",
+   "config": {
+    "seed": 7,
+    "passengers": 600,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": {
+     "type": "gas",
+     "zoneId": "CON",
+     "at": 25
+    }
+   },
+   "summary": {
+    "evacTime": 94.5,
+    "completion": 1,
+    "evacuated": 620,
+    "trapped": 0,
+    "total": 620,
+    "peakDensity": 3.89,
+    "maxCongestionPoints": 3,
+    "exitUsage": {
+     "E1": 214,
+     "E2": 202,
+     "E3": 72,
+     "E4": 82,
+     "ME": 50
+    },
+    "alarmAt": 25,
+    "endT": 119.5
+   },
+   "score": 72,
+   "daysAgo": 5
+  },
+  {
+   "id": "r7",
+   "projectId": "p2",
+   "kind": "simulation",
+   "title": "تمرين إخلاء بدون خطر",
+   "config": {
+    "seed": 7,
+    "passengers": 400,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": null
+   },
+   "summary": {
+    "evacTime": 95.9,
+    "completion": 1,
+    "evacuated": 420,
+    "trapped": 0,
+    "total": 420,
+    "peakDensity": 2.44,
+    "maxCongestionPoints": 1,
+    "exitUsage": {
+     "E1": 134,
+     "E2": 145,
+     "E3": 44,
+     "E4": 41,
+     "ME": 56
+    },
+    "alarmAt": 0,
+    "endT": 95.9
+   },
+   "score": 81,
+   "daysAgo": 8
+  },
+  {
+   "id": "r8",
+   "projectId": "p3",
+   "kind": "simulation",
+   "title": "ازدحام – تفتيش أمني",
+   "config": {
+    "seed": 7,
+    "passengers": 900,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "concourse",
+    "speed": 1.2,
+    "hazard": {
+     "type": "crowd",
+     "zoneId": "SEC",
+     "at": 15
+    }
+   },
+   "summary": {
+    "evacTime": 129.7,
+    "completion": 1,
+    "evacuated": 920,
+    "trapped": 0,
+    "total": 920,
+    "peakDensity": 5,
+    "maxCongestionPoints": 5,
+    "exitUsage": {
+     "E1": 348,
+     "E2": 270,
+     "E3": 14,
+     "E4": 101,
+     "ME": 187
+    },
+    "alarmAt": 15,
+    "endT": 144.7
+   },
+   "score": 59,
+   "daysAgo": 6
+  },
+  {
+   "id": "r9",
+   "projectId": "p3",
+   "kind": "robustness",
+   "title": "اختبار تحمّل – 12 تشغيلًا",
+   "config": {
+    "seed": 7,
+    "passengers": 520,
+    "staff": 20,
+    "entrances": 2,
+    "exits": 4,
+    "emergencyExits": 2,
+    "distribution": "balanced",
+    "speed": 1.2,
+    "hazard": null
+   },
+   "summary": {
+    "evacTime": 98.6,
+    "completion": 1,
+    "evacuated": 540,
+    "trapped": 0,
+    "total": 540,
+    "peakDensity": 3.33,
+    "maxCongestionPoints": 2,
+    "exitUsage": {
+     "E1": 189,
+     "E2": 174,
+     "E3": 53,
+     "E4": 50,
+     "ME": 74
+    },
+    "alarmAt": 0,
+    "endT": 98.6
+   },
+   "score": 75,
+   "daysAgo": 9
+  }
+ ]
+}

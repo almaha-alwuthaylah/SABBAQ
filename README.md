@@ -2,8 +2,18 @@
 
 **An interactive digital-twin showcase for simulating airport emergencies.** Trigger a fire, gas leak or exit closure in a passenger terminal, watch hundreds of people evacuate in real time, then stress-test the plan, evaluate improvements and compare solutions side by side.
 
+**Live demo:** https://almaha-alwuthaylah.github.io/SABBAQ/
+
 > Frontend-only portfolio project · Arabic RTL · Responsive · No backend.
 > The facility, data and results are **illustrative**: a fictional airport and a simplified crowd model, not a validated engineering tool.
+
+![Simulation Lab — live evacuation with a fire at Gate 04](docs/screenshots/simulation-lab.png)
+
+| Before / After comparison | Break my plan (stress test) |
+|---|---|
+| ![Before / After](docs/screenshots/before-after.png) | ![Stress test](docs/screenshots/stress-test.png) |
+| **Dashboard** | **Analytics** |
+| ![Dashboard](docs/screenshots/dashboard.png) | ![Analytics](docs/screenshots/analytics.png) |
 
 ---
 
@@ -49,7 +59,12 @@ bun test           # engine and analysis tests
 bun run seed       # regenerate the sample results from the engine
 ```
 
-Deploy by uploading `dist/` to any static host (GitHub Pages, Netlify, Vercel).
+Requires [Bun](https://bun.sh) 1.1 or later.
+
+### Deployment
+
+Every push to `main` runs `.github/workflows/deploy.yml`, which installs, tests, builds and publishes `dist/` to **GitHub Pages**. One-time setup: *Settings → Pages → Build and deployment → Source: **GitHub Actions***.
+All asset paths are relative, so `dist/` also works on any other static host (Netlify, Vercel, Cloudflare Pages).
 
 Sign-in is a **demo flow**: any email and an 8-character password work, and nothing leaves the browser. Visitors can also use **Try as guest**.
 
@@ -75,6 +90,12 @@ src/
 
 - Automatic tracing of uploaded floor plans is not included. The Studio supports upload, scale calibration, and geometry, exit and connectivity checks on the project layout.
 - The crowd model is deliberately simplified (no counter-flow, stairs or smoke toxicity modelling).
+
+## Author
+
+Designed and built by **Almaha Alwuthaylah**: product design in Figma, frontend implementation, and the simulation engine.
+
+License: MIT.
 
 ---
 

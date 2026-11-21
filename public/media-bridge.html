@@ -5,11 +5,13 @@ const files = [
   ["1-dashboard.png","image/png"],["2-before-after.png","image/png"],["3-simulation-lab.png","image/png"],
   ["4-airport-studio.png","image/png"],["5-analytics.png","image/png"],["SABBAQ-Portfolio.pdf","application/pdf"]];
 (async () => {
-  if (window.parent === window) return;
+  const target = window.parent !== window ? window.parent : window.opener;
+  if (!target) { document.body.textContent = "SABBAQ media"; return; }
   for (const [name, type] of files) {
     const buf = await (await fetch("./media/" + name)).arrayBuffer();
-    window.parent.postMessage({ kind: "sabbaq-file", name, type, buf }, "https://www.linkedin.com", [buf]);
+    target.postMessage({ kind: "sabbaq-file", name, type, buf }, "https://www.linkedin.com", [buf]);
   }
-  window.parent.postMessage({ kind: "sabbaq-done" }, "https://www.linkedin.com");
+  target.postMessage({ kind: "sabbaq-done" }, "https://www.linkedin.com");
+  document.body.textContent = "Media sent. You can close this tab.";
 })();
 </script></body></html>

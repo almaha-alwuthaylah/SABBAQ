@@ -11,7 +11,4 @@ for (const r of [app, worker]) if (!r.success) { console.error(r.logs); process.
 if (existsSync(`${out}/main.css`)) renameSync(`${out}/main.css`, `${out}/app.css`);
 cpSync("public/index.html", `${out}/index.html`);
 cpSync("public/og-image.png", `${out}/og-image.png`);
-cpSync("public/media-bridge.html", `${out}/media-bridge.html`);
-cpSync("docs/media", `${out}/media`, { recursive: true });
-cpSync("docs/SABBAQ-Portfolio.pdf", `${out}/media/SABBAQ-Portfolio.pdf`);
 console.log(`built ${out}/`);

@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>SABBAQ media</title><meta name="robots" content="noindex"></head><body>
+<script>
+// Sends SABBAQ's public showcase media to an embedding LinkedIn page (used to attach project media).
+const files = [
+  ["1-dashboard.png","image/png"],["2-before-after.png","image/png"],["3-simulation-lab.png","image/png"],
+  ["4-airport-studio.png","image/png"],["5-analytics.png","image/png"],["SABBAQ-Portfolio.pdf","application/pdf"]];
+(async () => {
+  if (window.parent === window) return;
+  for (const [name, type] of files) {
+    const buf = await (await fetch("./media/" + name)).arrayBuffer();
+    window.parent.postMessage({ kind: "sabbaq-file", name, type, buf }, "https://www.linkedin.com", [buf]);
+  }
+  window.parent.postMessage({ kind: "sabbaq-done" }, "https://www.linkedin.com");
+})();
+</script></body></html>
